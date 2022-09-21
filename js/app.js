@@ -4,7 +4,7 @@ const btns = document.querySelectorAll('span');
 
 btns.forEach((btn) => {  // execute a function on all the calculator buttons
     btn.addEventListener("click", (e) => {
-        let clicked = e.target.innerText  // get the text of whatever 
+        let clicked = e.target.innerText  // get the text of whatever button is clicked on
         // console.log(clicked);
 
         if (clicked == "AC") {  // clear the two screens
@@ -19,7 +19,7 @@ btns.forEach((btn) => {  // execute a function on all the calculator buttons
                 firstScreen.innerHTML = "";
             }
             else if (evaluation == Infinity){  
-                firstScreen.innerHTML = "Math Error"
+//                 firstScreen.innerHTML = "Math Error"  // give a math error if the answer is infinity
             }
             else{
                 firstScreen.innerHTML = evaluation
@@ -30,22 +30,13 @@ btns.forEach((btn) => {  // execute a function on all the calculator buttons
 
         }
         else if (clicked == "Delete"){
-            secondScreen.innerHTML = secondScreen.innerHTML.slice(0,-1)
+            secondScreen.innerHTML = secondScreen.innerHTML.slice(0,-1)  // delete the last number/expression on the screen
         }
         else if (clicked == "Clear"){
-            firstScreen.innerHTML = ""
+            firstScreen.innerHTML = ""  // clear the screens
         }
         else{
-            secondScreen.innerHTML += clicked
+            secondScreen.innerHTML += clicked  
         }
     })})  
 
-// if (btnText == "Delete"){
-//     secondScreen.textContent = secondScreen.textContent.substring.length-1
-// }
-// if (btnText == "=") {
-//     firstScreen.innerText = eval(secondScreen.innerText)
-//     secondScreen.textContent = "";
-// }else{
-//     secondScreen.textContent += i.targe;
-// }
